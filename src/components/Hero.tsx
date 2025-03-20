@@ -5,8 +5,19 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-28 pb-12 bg-hero-pattern">
-      <div className="container mx-auto px-4">
+    <section 
+      className="pt-28 pb-12 relative"
+      style={{
+        backgroundImage: "url('/src/assets/images/banners/banner.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        position: "relative",
+      }}
+    >
+      {/* Overlay untuk memastikan teks tetap terbaca */}
+      <div className="absolute inset-0 bg-dark-blue/60"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           {/* Text Content */}
           <div className="md:w-1/2 text-center md:text-left">
