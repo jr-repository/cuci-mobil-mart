@@ -7,7 +7,7 @@ import { useCart } from "@/components/CartProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Product as ProductType } from "@/data/products";
-import { products } from "@/data/products";
+import products from "@/data/products";
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
