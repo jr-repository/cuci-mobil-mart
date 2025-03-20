@@ -10,11 +10,7 @@ interface CheckoutFormProps {
 
 interface FormData {
   name: string;
-  email: string;
-  phone: string;
   address: string;
-  city: string;
-  postalCode: string;
   notes: string;
 }
 
@@ -23,11 +19,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSubmit }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
-    email: "",
-    phone: "",
     address: "",
-    city: "",
-    postalCode: "",
     notes: "",
   });
 
@@ -53,7 +45,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         {/* Name */}
         <div>
           <label
@@ -73,84 +65,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSubmit }) => {
           />
         </div>
 
-        {/* Email */}
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Email*
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-main"
-          />
-        </div>
-
-        {/* Phone */}
-        <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Nomor Telepon*
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-main"
-          />
-        </div>
-
-        {/* City */}
-        <div>
-          <label
-            htmlFor="city"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Kota*
-          </label>
-          <input
-            type="text"
-            id="city"
-            name="city"
-            value={formData.city}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-main"
-          />
-        </div>
-
-        {/* Postal Code */}
-        <div>
-          <label
-            htmlFor="postalCode"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Kode Pos*
-          </label>
-          <input
-            type="text"
-            id="postalCode"
-            name="postalCode"
-            value={formData.postalCode}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-main"
-          />
-        </div>
-
         {/* Address - full width */}
-        <div className="md:col-span-2">
+        <div>
           <label
             htmlFor="address"
             className="block text-sm font-medium text-gray-700 mb-1"
@@ -169,7 +85,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSubmit }) => {
         </div>
 
         {/* Notes - full width */}
-        <div className="md:col-span-2">
+        <div>
           <label
             htmlFor="notes"
             className="block text-sm font-medium text-gray-700 mb-1"

@@ -27,11 +27,7 @@ const Checkout = () => {
     const message = `*Pesanan Baru dari CuciMart*%0A%0A` +
       `*Informasi Pelanggan*%0A` +
       `Nama: ${formData.name}%0A` +
-      `Email: ${formData.email}%0A` +
-      `Telepon: ${formData.phone}%0A` +
-      `Alamat: ${formData.address}%0A` +
-      `Kota: ${formData.city}%0A` +
-      `Kode Pos: ${formData.postalCode}%0A%0A` +
+      `Alamat: ${formData.address}%0A%0A` +
       `*Detail Pesanan*%0A` +
       `${productsList}%0A%0A` +
       `*Total: ${formatCurrency(totalPrice)}*%0A%0A` +

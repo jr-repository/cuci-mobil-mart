@@ -1,13 +1,12 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { ShoppingCart, Menu, X, Search } from "lucide-react";
+import { ShoppingCart, Menu, Search } from "lucide-react";
 import { useCart } from "./CartProvider";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -16,27 +15,12 @@ import {
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { totalItems } = useCart();
   const isMobile = useIsMobile();
 
   // Check if current path matches the link
   const isActive = (path: string) => location.pathname === path;
-
-  // Handle scroll event to change navbar style
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Menu items for both mobile and desktop
   const menuItems = [
@@ -48,12 +32,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-md py-2"
-          : "bg-transparent py-4"
-      )}
+      className="fixed top-0 left-0 w-full z-50 bg-white shadow-md py-2"
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
@@ -61,7 +40,7 @@ const Navbar = () => {
           <span className="text-xl md:text-2xl font-bold text-royal-blue">CuciMart</span>
         </Link>
 
-        {/* Desktop Navigation - Simple and clean */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           {menuItems.map((item) => (
             <Link

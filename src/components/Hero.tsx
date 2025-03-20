@@ -8,7 +8,7 @@ const Hero = () => {
     <section 
       className="pt-28 pb-12 relative"
       style={{
-        backgroundImage: "url('/src/assets/images/banners/banner.jpg')",
+        backgroundImage: "url('https://images.unsplash.com/photo-1669133454455-798683c9d541?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
@@ -55,7 +55,7 @@ const Hero = () => {
           <div className="md:w-1/2 mt-12 md:mt-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <div className="relative">
               <img
-                src="/src/assets/images/car-wash-hero.jpg"
+                src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3"
                 alt="Car washing equipment"
                 className="rounded-lg shadow-xl max-w-full h-auto animate-float"
               />
