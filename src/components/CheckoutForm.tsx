@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useCart } from "./CartProvider";
 import { formatCurrency } from "@/utils/formatCurrency";
-import { Loader2, WhatsApp } from "lucide-react";
+import { Loader2, MessageCircle } from "lucide-react";
 
 interface CheckoutFormProps {
   onSubmit: (formData: FormData) => void;
@@ -227,7 +227,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onSubmit }) => {
           </>
         ) : (
           <>
-            <WhatsApp className="w-5 h-5 mr-2" />
+            <MessageCircle className="w-5 h-5 mr-2" />
             <span>Checkout via WhatsApp</span>
           </>
         )}
