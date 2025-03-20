@@ -94,10 +94,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, className }) => {
         </div>
       </div>
 
-      {/* Add to cart button */}
+      {/* Add to cart button - always visible */}
       <button
         onClick={handleAddToCart}
-        className="absolute bottom-4 right-4 p-2 rounded-full bg-blue-main text-white opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-royal-blue"
+        className="absolute bottom-4 right-4 p-2 rounded-full bg-blue-main text-white shadow-md hover:bg-royal-blue transition-all duration-300"
         aria-label="Tambah ke keranjang"
       >
         <ShoppingCart className="w-4 h-4" />
