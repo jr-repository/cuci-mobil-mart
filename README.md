@@ -1,69 +1,163 @@
-# Welcome to your Lovable project
 
-## Project info
+# CuciMart - Toko Peralatan Cuci Mobil
 
-**URL**: https://lovable.dev/projects/95f7e494-714b-4621-a4f4-19a5dc4632cc
+CuciMart adalah website jual beli alat cuci mobil yang lengkap dan modern. Website ini dirancang dengan UI/UX yang menarik dan responsif di berbagai ukuran layar.
 
-## How can I edit this code?
+## Fitur Utama
 
-There are several ways of editing your application.
+- **Halaman Home**: Menampilkan landing page dengan paket-paket cuci mobil, fitur utama, dan produk populer
+- **Halaman Shop**: Menampilkan produk dengan fitur filter, range harga, dan pencarian
+- **Halaman Checkout**: Sistem checkout dengan integrasi WhatsApp
+- **Halaman About**: Informasi tentang CuciMart
+- **Halaman Contact**: Form kontak dan informasi kontak
 
-**Use Lovable**
+## Teknologi yang Digunakan
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/95f7e494-714b-4621-a4f4-19a5dc4632cc) and start prompting.
+- React
+- TypeScript
+- Tailwind CSS
+- React Router
+- ShadCN UI Components
 
-Changes made via Lovable will be committed automatically to this repo.
+## Struktur Folder
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── assets/          # Berisi gambar dan aset lainnya
+│   └── images/      # Folder untuk menyimpan gambar website
+├── components/      # Komponen yang dapat digunakan kembali
+├── data/            # Data produk, paket, dll.
+├── pages/           # Halaman utama website
+├── utils/           # Fungsi-fungsi utilitas
+└── App.tsx          # Root component
 ```
 
-**Edit a file directly in GitHub**
+## Panduan Edit Konten
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Cara Mengedit Produk
 
-**Use GitHub Codespaces**
+Untuk mengedit produk, buka file `src/data/products.ts`. Di sini Anda dapat:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Menambahkan produk baru dengan menambahkan objek ke array `products`
+2. Mengubah data produk yang sudah ada
+3. Menghapus produk dengan menghapus objek dari array
 
-## What technologies are used for this project?
+Contoh format produk:
 
-This project is built with .
+```typescript
+{
+  id: 1,
+  name: "High Pressure Washer Professional",
+  price: 2450000,
+  description: "Deskripsi produk",
+  image: "/src/assets/images/products/pressure-washer.jpg",
+  category: "mesin",
+  brand: "Karcher",
+  isPopular: true,
+  inStock: true,
+  rating: 4.8,
+  reviews: 124,
+  tags: ["tekanan tinggi", "profesional", "terbaik"]
+}
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Cara Mengedit Paket
 
-## How can I deploy this project?
+Untuk mengedit paket, buka file `src/data/packages.ts`. Di sini Anda dapat mengubah data paket yang ditampilkan di halaman Home.
 
-Simply open [Lovable](https://lovable.dev/projects/95f7e494-714b-4621-a4f4-19a5dc4632cc) and click on Share -> Publish.
+### Cara Mengedit Gambar
 
-## I want to use a custom domain - is that possible?
+1. Siapkan gambar baru yang ingin Anda gunakan
+2. Simpan gambar ke folder `src/assets/images/` atau subfolder yang sesuai (contoh: `products/` untuk gambar produk)
+3. Update referensi gambar di file data yang sesuai
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+### Cara Mengedit Konten Halaman
+
+#### Halaman Home (Index.tsx)
+
+Edit file `src/pages/Index.tsx` untuk mengubah:
+- Hero section
+- Bagian fitur/keunggulan
+- Testimonial
+- CTA section
+
+#### Halaman Shop (Shop.tsx)
+
+Edit file `src/pages/Shop.tsx` untuk mengubah:
+- Judul dan deskripsi halaman
+- Layout produk
+- Filter dan kategori
+
+#### Halaman About (About.tsx)
+
+Edit file `src/pages/About.tsx` untuk mengubah:
+- Cerita perusahaan
+- Misi & visi
+- Informasi tim
+- Keunggulan
+
+#### Halaman Contact (Contact.tsx)
+
+Edit file `src/pages/Contact.tsx` untuk mengubah:
+- Informasi kontak
+- Alamat
+- Jam operasional
+- FAQ
+
+### Cara Mengedit Informasi Footer
+
+Edit file `src/components/Footer.tsx` untuk mengubah:
+- Sosial media
+- Alamat
+- Nomor telepon
+- Email
+- Copyright
+
+## Mengedit Tampilan
+
+### Warna
+
+Warna utama website dapat diubah di file `tailwind.config.ts` pada bagian `colors`. Website ini menggunakan palette warna:
+- Blue Main: #89a4db
+- Gray Main: #7b8389
+- Dark Blue: #00011f
+- Royal Blue: #112b68
+- Yellow Accent: #f6d807
+
+### Font dan Tipografi
+
+Untuk mengubah font dan styling teks, Anda dapat mengedit file `src/index.css` dan menambahkan font baru di `tailwind.config.ts`.
+
+### Responsivitas
+
+Website sudah dirancang responsif dengan breakpoint:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## WhatsApp Checkout
+
+Sistem checkout website ini terintegrasi dengan WhatsApp nomor 6281573635143. Saat user melakukan checkout, detil pesanan akan dikirim ke nomor tersebut.
+
+Untuk mengubah nomor WhatsApp:
+1. Buka file `src/pages/Checkout.tsx`
+2. Cari variabel `whatsappUrl`
+3. Ubah nomor pada URL tersebut
+
+## Troubleshooting
+
+### Gambar Tidak Muncul
+
+1. Pastikan path gambar sudah benar
+2. Periksa apakah gambar ada di folder yang sesuai
+3. Jika mengupload gambar baru, pastikan format gambar didukung (JPG, PNG, WebP)
+
+### Perubahan Tidak Muncul
+
+1. Pastikan file sudah di-save
+2. Refresh halaman browser
+3. Bersihkan cache browser jika perlu
+
+## Pengembangan Lanjutan
+
+Untuk pengembangan lanjutan atau custom feature, Anda dapat menghubungi developer original atau mengikuti standar code yang sudah ada.
